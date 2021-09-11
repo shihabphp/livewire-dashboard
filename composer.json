@@ -1,0 +1,53 @@
+{
+    "name": "shihabphp/livewire-dashboard",
+    "description": "A Dashboard Creator for your Laravel or Livewire Application",
+    "type": "library",
+    "require": {
+        "livewire/livewire": "^2.0",
+        "php": "^7.4",
+        "illuminate/database": "^8.0",
+        "illuminate/view": "^8.0"
+    },
+    "require-dev": {
+           "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Muhammed Shihab",
+            "email": "Shihab640@hotmail.com",
+	    "homepage": "https://github.com/Shihabphp/livewire-dashboard.git",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shihabphp\\Dashboard\\": "src"
+           
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shihabphp\\Dashboard\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shihabphp\\Dashboard\\DashboardServiceProvider",
+                "Shihabphp\\Dashboard\\KPITileServiceProvider",
+                "Shihabphp\\Dashboard\\ChartTileServiceProvider"
+            ],
+            "aliases": {
+                "Dashboard": "Shihabphp\\Dashboard\\Facades\\Dashboard"
+            }
+           
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
