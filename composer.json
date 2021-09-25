@@ -6,7 +6,8 @@
         "livewire/livewire": "^2.0",
         "php": "^7.4",
         "illuminate/database": "^8.0",
-        "illuminate/view": "^8.0"
+        "illuminate/view": "^8.0",
+        "doctrine/dbal": "^3.1"
     },
     "require-dev": {
            "orchestra/testbench": "^6.0",

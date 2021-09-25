@@ -52,8 +52,19 @@ php artisan migrate
 ## Creating your dashboard
 
 In your Laravel app, create a new route . The url can be whatever you want.
+
+
+ In your Laravel app, create a new route and view. The url and view name can be whatever you want.
+
+
 ```php
-Route::get('dashboard', Shihabphp\Dashboard\Http\Livewire\DashboardComponent::class);
+Route::view('dashboard-url', 'dashboard-blade-view');
+```
+
+In your Blade view, use the dashboard Blade view component.
+
+```bash
+ <livewire:livewire-dashboard />
 ```
 
 ## Customizing the views

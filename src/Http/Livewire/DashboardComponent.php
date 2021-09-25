@@ -115,7 +115,6 @@ public function widgetAdded(){
        $this->reset();
         $this->modalFormVisible = true;
         $this->modalWidth  = '7xl';
-        $this->modalFullFormVisible = true;
         $this->modelId = $id;
         $this->setFormProperties();
     }

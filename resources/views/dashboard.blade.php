@@ -1,33 +1,28 @@
-<div>
-
+<div class="bg-gray-100">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <div class="py-3 pr-3 pt-0">
 <section class="bg-transparent">
-  <div class="flex flex-wrap -mx-3 items-center">
-    <div class="w-full lg:w-3/12 flex items-center mb-5 lg:mb-0 px-3">
+ 
    
-      <div class="ml-4">
-      <x-header value="{{__('dashboard::lang.dashboard')}}" />
-      </div>
-    </div>
-    <div class="w-full lg:w-auto ml-auto px-3">
-    <div class="flex items-center justify-end py-3 pb-1 text-right">
+   
+    <div class="flex items-center justify-end py-3 pb-1 text-right w-full lg:w-auto ml-auto px-3">
 
 
 
-<x-secondary-button class="border-r-0" 
+    <x-dashboard::secondary-button class="border-r-0" 
 wire:click="makeUpdateMode" >
 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
 </svg>
-{{__('dashboard::lang.reorder_dashboard_widgets')}}
-</x-secondary-button>
+{{ucfirst(trans('dashboard::lang.reorder_dashboard_widgets'))}}
+</x-dashboard::secondary-button>
 
 @include('dashboard::add-widgets')
 @include('dashboard::delete-widget')
 
 
-</div>
-    </div>
+
+   
   </div>
 </section>
 
@@ -46,7 +41,7 @@ style="min-height: 8.3333vw;min-width: 8.3333333333%;
 @if($widget->width) width:{{(($widget->width)*8.3333333333)}}%;  @endif"
 class=" overflow-hidden relative bg-tile   m-0  mb-4"
 gs-w="{{$widget->width}}" gs-h="{{$widget->height}}">
-<div class=" bg-white dark:bg-darker p-4 mb-4 block h-full mr-4 
+<div class=" bg-white dark:bg-grey-800 p-4 mb-4 block h-full mr-4 
 @if($updatemode)   rounded rounded-md flex   @endif"
 @if($updatemode) style=" cursor:move; box-shadow: 0 1px 10px 0 rgb(0 0 0 / 20%); " @endif>
 @include('dashboard::action-menu')

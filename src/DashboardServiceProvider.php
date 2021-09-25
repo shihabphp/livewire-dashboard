@@ -10,19 +10,30 @@ class DashboardServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-    $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dashboard');
-    $this->registerRoutes();
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dashboard');
+
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'dashboard');
+
+   
    
     $this
         ->registerPublishables()
         ->registerBladeComponents();
+
+
+
+
+        
+
+     
+
+
        
     }
 
-    protected function registerRoutes()
-{
-       $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-}
 
 
     public function register()
@@ -43,6 +54,13 @@ class DashboardServiceProvider extends ServiceProvider
             __DIR__ . '/../resources/views' => resource_path('views/vendor/dashboard'),
         ], 'dashboard');
 
+        $this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/dashboard'),
+        ]);
+
+
+
+        
         return $this;
     }
 

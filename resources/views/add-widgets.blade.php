@@ -1,16 +1,16 @@
 <div>
-<x-secondary-button wire:click="createShowModal" >
+<x-dashboard::secondary-button wire:click="createShowModal" >
 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4v16m8-8H4" />
-</svg>  {{__('dashboard::lang.add_dashboard_widgets')}}
-</x-secondary-button>
+</svg>  {{ucfirst(trans('dashboard::lang.add_dashboard_widgets'))}}
+</x-dashboard::secondary-button>
 <div class="text-left">      
-<x-dialog-modal wire:model="modalFormVisible" maxWidth="{{$this->modalWidth}}" >   >
+<x-dashboard::dialog-modal wire:model="modalFormVisible" maxWidth="{{$this->modalWidth}}" >   >
     <x-slot name="title">
     @if($this->modelId)
-    {{__('dashboard::lang.update_dashboard_widgets')}}
+    {{ucfirst(trans('dashboard::lang.update_dashboard_widgets'))}}
     @else
-    {{__('dashboard::lang.add_dashboard_widgets')}}
+    {{ucfirst(trans('dashboard::lang.add_dashboard_widgets'))}}
      @endif
        
     </x-slot>
@@ -26,7 +26,7 @@
                 <div class="mt-4">
      
       <h4 class="mb-2 text-base  font-bold font-heading" data-config-id="01_title">
-      {{__('dashboard::lang.step_1')}}. {{__('dashboard::lang.widget_type')}}
+      {{ucfirst(trans('dashboard::lang.step'))}} 1. {{ucfirst(trans('dashboard::lang.widget_type'))}}
       </h4>
     
 
@@ -35,7 +35,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-primary-lighter hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
 </svg>
-<x-label for="{{__('dashboard::lang.line_chart')}}" value="{{__('dashboard::lang.line_chart')}}" />
+<x-dashboard::label for="{{ucfirst(trans('dashboard::lang.line_chart'))}}" value="{{ucfirst(trans('dashboard::lang.line_chart'))}}" />
 
 <input type="radio"  wire:model.lazy="widget_type"  value="line-chart"  required="required" @error('widget_type') class="border-red-600 bg-red-50" @enderror> 
 
@@ -45,7 +45,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto text-primary-lighter hover:text-primary" viewBox="0 0 20 20" fill="currentColor">
   <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
 </svg>
-<x-label for="{{__('dashboard::lang.bar_chart')}}" value="{{__('dashboard::lang.bar_chart')}}" />
+<x-dashboard::label for="{{ucfirst(trans('dashboard::lang.bar_chart'))}}" value="{{ucfirst(trans('dashboard::lang.bar_chart'))}}" />
 
 <input type="radio" wire:model.lazy="widget_type" value="bar-chart"  required="required" @error('widget_type') class="border-red-600 bg-red-50" @enderror>
   </div>
@@ -59,7 +59,7 @@
 </svg>
 
 
-<x-label for="{{__('dashboard::lang.pie_chart')}}" value="{{__('dashboard::lang.pie_chart')}}" />
+<x-dashboard::label for="{{ucfirst(trans('dashboard::lang.pie_chart'))}}" value="{{ucfirst(trans('dashboard::lang.pie_chart'))}}" />
 
 <input type="radio" wire:model.lazy="widget_type" value="pie-chart"  required="required" @error('widget_type') class="border-red-600 bg-red-50" @enderror>
   </div>
@@ -74,7 +74,7 @@
 </g>
 
 </svg>
-<x-label for="{{__('dashboard::lang.number_block')}}" value="{{__('dashboard::lang.number_block')}}" />
+<x-dashboard::label for="{{ucfirst(trans('dashboard::lang.number_block'))}}" value="{{ucfirst(trans('dashboard::lang.number_block'))}}" />
 
 <input type="radio" wire:model.lazy="widget_type" value="number_block"  required="required" @error('widget_type') class="border-red-600 bg-red-50" @enderror>
 
@@ -118,7 +118,7 @@
 </g>
 
 </svg>
-<x-label for="{{__('dashboard::lang.latest_entries')}}" value="{{__('dashboard::lang.latest_entries')}}" />
+<x-dashboard::label for="{{ucfirst(trans('dashboard::lang.latest_entries'))}}" value="{{ucfirst(trans('dashboard::lang.latest_entries'))}}" />
 
 <input type="radio" wire:model.lazy="widget_type" value="basic-kpi"  required="required"  @error('widget_type') class="border-red-600 bg-red-50" @enderror>
   </div>
@@ -134,24 +134,24 @@
   <div class="mt-4">
      
      <h4 class="mb-2 text-base  font-bold font-heading" data-config-id="01_title">
-     {{__('dashboard::lang.step_2')}}. {{__('dashboard::lang.data_source')}}
+     {{ucfirst(trans('dashboard::lang.step'))}} 2. {{ucfirst(trans('dashboard::lang.data_source'))}}
      </h4>
 
      <div class="px-4 pb-4 grid md:grid-cols-4">
           
           <div class="mt-4 pr-4" wire:key="quickinsert0">
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="crud_model">
-     {{__('dashboard::lang.crud')}}
+     {{ucfirst(trans('dashboard::lang.crud'))}}
 </label>
                         <div x-data="" class="flex flex-col">
 <div class="flex">
 
  <select x-ref="select" class="
  @error('crud_model') border-red-600 bg-red-50 @enderror
- block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
+ block h-9 mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
      " wire:model.lazy="crud_model">
      <option value="" selected="selected" disabled="disabled">
-     {{__('dashboard::lang.select_crud')}}
+     {{ucfirst(trans('dashboard::lang.select_crud'))}}
      </option>
                     
      @foreach($this->displaymodels() as $model)
@@ -170,12 +170,12 @@
      
           <div class="mt-4 pr-4" >
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="aggregate_function">
-      {{__('dashboard::lang.aggregating_function')}}
+     {{ucfirst(trans('dashboard::lang.aggregating_function'))}}
 </label>
                         <div x-data="" class="flex flex-col">
                         <select x-ref="select"
                          class="@error('aggregate_function') border-red-600 bg-red-50 @enderror
-                         block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
+                         block h-9 mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
      " wire:model.lazy="aggregate_function">
    
      <option value="count">count()</option>
@@ -191,15 +191,15 @@
      
  <div class="mt-4 pr-4" >
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="groupbycolumn">
-      {{__('dashboard::lang.group_by_column')}}
+     {{ucfirst(trans('dashboard::lang.group_by_column'))}}
 </label>
                         <div x-data="" class="flex flex-col">
                         <select x-ref="select" 
                         class="@error('groupbycolumn') border-red-600 bg-red-50 @enderror
-                        block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
+                       h-9 block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
      " wire:model.lazy="groupbycolumn">
      <option value="" selected="selected" disabled="disabled">
-     {{__('dashboard::lang.select_group_by_column')}}
+     {{ucfirst(trans('dashboard::lang.select_group_by_column'))}}
      </option>
      
      @foreach($this->groupingcolumns as $key=>$column)
@@ -221,13 +221,16 @@
  <div class="mt-4 pr-4" wire:key="quickinsert1">
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="ranges">
      
-     {{__('dashboard::lang.show_filtered_data')}}
+     {{ucfirst(trans('dashboard::lang.show_filtered_data'))}}
 </label>
                         <div x-data="" class="flex flex-col">
-                        <select x-ref="select" class="block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
+                        <select x-ref="select"
+                        class="@error('ranges') border-red-600 bg-red-50 @enderror 
+                        h-9 block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0    dark:bg-dark dark:border-transparent dark:text-primary 
+      
      " wire:model.lazy="ranges">
      <option value="">
-     {{__('dashboard::lang.no_filter')}}
+     {{ucfirst(trans('dashboard::lang.no_filter'))}}
      </option> 
    
      @foreach($this->allRanges() as $range=>$key)
@@ -250,17 +253,17 @@
  <div class="mt-4">
      
      <h4 class="mb-2 text-base  font-bold font-heading" data-config-id="01_title">
-     {{__('dashboard::lang.step_3')}}. {{__('dashboard::lang.visual_style')}}
+     {{ucfirst(trans('dashboard::lang.step'))}} 3. {{ucfirst(trans('dashboard::lang.visual_style'))}}
      </h4>
 
      <div class="px-4 pb-4 grid md:grid-cols-4">
           <div class="mt-4 pr-4" >
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="title">
-    {{__('dashboard::lang.widget_title')}}
+     {{ucfirst(trans('dashboard::lang.widget_title'))}}
 </label>
                         <div x-data="" class="flex flex-col">
 <div class="flex">
-<input placeholder="{{__('dashboard::lang.widget_title')}}" x-ref="input" type="text"
+<input placeholder="{{ucfirst(trans('dashboard::lang.widget_title'))}}" x-ref="input" type="text"
  class="@error('title') border-red-600 bg-red-50 @enderror block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0    dark:bg-dark dark:border-transparent dark:text-primary 
         " wire:model.lazy="title">
 </div>
@@ -269,11 +272,11 @@
  </div>
  <div class="mt-4 pr-4" >
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="position">
-    {{__('dashboard::lang.widget_position')}}
+     {{ucfirst(trans('dashboard::lang.widget_position'))}}
 </label>
                         <div x-data="" class="flex flex-col">
 <div class="flex">
-<input placeholder="{{__('dashboard::lang.widget_position')}}" x-ref="input"   type="number"
+<input placeholder="{{ucfirst(trans('dashboard::lang.widget_position'))}}" x-ref="input"   type="number"
  class="@error('position') border-red-600 bg-red-50 @enderror block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0    dark:bg-dark dark:border-transparent dark:text-primary 
         " wire:model.lazy="position">
 </div>
@@ -282,16 +285,16 @@
  </div>
  <div class="mt-4 pr-4" >
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="width">
-    {{__('dashboard::lang.widget_width')}}
+     {{ucfirst(trans('dashboard::lang.widget_width'))}}
 </label>
                         <div x-data="" class="flex flex-col">
 <div class="flex">
 <select x-ref="select"
                          class="@error('width') border-red-600 bg-red-50 @enderror
-                         block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
+                         block mt-1 h-9 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
      " wire:model.lazy="width">
      <option value="" selected="selected" disabled="disabled">
-     {{__('dashboard::lang.select_widget_width')}}
+     {{ucfirst(trans('dashboard::lang.select_widget_width'))}}
      </option>
      @for ($i = 1; $i <= 12; $i++) 
      <option value="{{$i}}">{{$i}}</option>
@@ -303,16 +306,16 @@
  </div>
  <div class="mt-4 pr-4" >
      <label class="block font-medium text-sm text-gray-700 dark:text-primary-light" for="height">
-    {{__('dashboard::lang.widget_height')}}
+     {{ucfirst(trans('dashboard::lang.widget_height'))}}
 </label>
                         <div x-data="" class="flex flex-col">
 <div class="flex">
 <select x-ref="select"
                          class="@error('height') border-red-600 bg-red-50 @enderror
-                         block mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
+                         block h-9 mt-1 w-full shadow-sm border-gray-300 text-sm  focus:ring-0  dark:bg-dark dark:border-transparent dark:text-primary block mt-1 w-full
      " wire:model.lazy="height">
      <option value="" selected="selected" disabled="disabled">
-     {{__('dashboard::lang.select_widget_height')}}
+     {{ucfirst(trans('dashboard::lang.select_widget_height'))}}
      </option>
      @for ($i = 1; $i <= 12; $i++) 
      <option value="{{$i}}">{{$i}}</option>
@@ -330,19 +333,19 @@
     </x-slot>
 
     <x-slot name="footer">
-        <x-secondary-button wire:click="refreshpages" >
-        {{__('dashboard::lang.nevermind')}}
-        </x-secondary-button>
+        <x-dashboard::secondary-button wire:click="refreshpages" >
+        {{ucfirst(trans('dashboard::lang.nevermind'))}}
+        </x-dashboard::secondary-button>
         @if ($modelId)
-        <x-button class="ml-2" wire:click="update" wire:loading.attr="disabled">
-        {{__('dashboard::lang.update')}}
-            </x-button>
+        <x-dashboard::button class="ml-2" wire:click="update" wire:loading.attr="disabled">
+        {{ucfirst(trans('dashboard::lang.update'))}}
+            </x-dashboard::button>
         @else
 
-        <x-button class="ml-2"  wire:click="create" >
-        {{__('dashboard::lang.create')}}
-        </x-button>
+        <x-dashboard::button class="ml-2"  wire:click="create" >
+        {{ucfirst(trans('dashboard::lang.create'))}}
+        </x-dashboard::button>
       @endif
     </x-slot>
-</x-dialog-modal>
+</x-dashboard::dialog-modal>
 </div></div>
