@@ -1,4 +1,4 @@
-# Create beautiful dashboards powered by Livewire
+# Create Dashboard
 
 Using this package you can create beautiful dashboards. The dashboard consists of tile which are, under the hood, Livewire components that can update themselves via polling. 
 
