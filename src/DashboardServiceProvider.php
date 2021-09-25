@@ -4,7 +4,7 @@ use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use Shihabphp\Dashboard\Http\Livewire\DashboardComponent;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Blade;
 class DashboardServiceProvider extends ServiceProvider
 {
     public function boot()
@@ -21,17 +21,9 @@ class DashboardServiceProvider extends ServiceProvider
 
     protected function registerRoutes()
 {
-  //  Route::group($this->routeConfiguration(), function () {
        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
- //});
 }
-protected function routeConfiguration()
-{
-    return [
-        'prefix' => config('dashboard.prefix'),
-        'middleware' => config('dashboard.middleware'),
-    ];
-}
+
 
     public function register()
     {
@@ -57,6 +49,8 @@ protected function routeConfiguration()
     protected function registerBladeComponents(): self
     {
        Livewire::component('livewire-dashboard', DashboardComponent::class);
+       Blade::component('header', 'components.header');
+       Blade::component('secondary-button', 'components.secondary-button');
         return $this;
     }
 }
