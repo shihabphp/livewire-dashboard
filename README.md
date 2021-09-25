@@ -32,7 +32,8 @@ composer require shihabphp/livewire-dashboard
 To create the dashboard_tiles table, you must create and run the migration.
 ```bash
 php artisan vendor:publish --provider="Shihabphp\Dashboard\DashboardServiceProvider" --tag="dashboard-migrations"
-php artisan migrate```
+php artisan migrate
+```
 
 
 
@@ -41,7 +42,7 @@ php artisan migrate```
 In your Laravel app, create a new route . The url can be whatever you want.
 ```php
 Route::get('dashboard', Shihabphp\Dashboard\Http\Livewire\DashboardComponent::class);```
-
+```
 
 ## Customizing the views
 
