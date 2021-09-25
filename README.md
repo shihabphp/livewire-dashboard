@@ -2,8 +2,8 @@
 
 Using this package you can create beautiful dashboards.
 
-![screenshot](resources/images/create-widget.png "Screenshot")
-![screenshot](resources/images/dashboard.png "Screenshot")
+
+![screenshot](resources/images/dashboard.gif "Screenshot")
 ## Requirements
 - [Laravel 8](https://laravel.com/docs/8.x)
 - [Livewire](https://laravel-livewire.com/)
