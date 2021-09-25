@@ -6,7 +6,7 @@ use App\Http\Middleware\Authenticate;
 use Shihabphp\Dashboard\Http\Livewire\DashboardComponent;
 
     Route::group(['prefix' => 'dashboard','middleware' => Authenticate::class], function () {
-        Route::get('/', DashboardComponent::class)
+        Route::get('/', \Shihabphp\Dashboard\Http\Livewire\DashboardComponent::class)
                 ->name('dashboard');
     });
   
