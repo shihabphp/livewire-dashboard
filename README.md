@@ -41,7 +41,7 @@ php artisan migrate
 
 In your Laravel app, create a new route . The url can be whatever you want.
 ```php
-Route::get('dashboard', Shihabphp\Dashboard\Http\Livewire\DashboardComponent::class);```
+Route::get('dashboard', Shihabphp\Dashboard\Http\Livewire\DashboardComponent::class);
 ```
 
 ## Customizing the views
