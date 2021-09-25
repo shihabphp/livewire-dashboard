@@ -1,13 +1,6 @@
 # Create Dashboard
 
-Using this package you can create beautiful dashboards. The dashboard consists of tile which are, under the hood, Livewire components that can update themselves via polling. 
-
-This package contains the base functionality:
-
-- the base css
-- a `dashboard` view component
-- a `tile` view component to position stuff on the dashboard
-- a `Tile` model to persist fetched data that tiles can use to store fetched data
+Using this package you can create beautiful dashboards.
 
 ## Requirements
 - [Laravel 8](https://laravel.com/docs/8.x)
@@ -36,8 +29,6 @@ php artisan migrate```
 
 
 ## Creating your dashboard
-
-In your Laravel app, create a new route . The url can be whatever you want.
 
 
  In your Laravel app, create a new route and view. The url and view name can be whatever you want.
