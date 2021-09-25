@@ -1,21 +1,46 @@
-## Requirements
-The livewire-dashboard package requires PHP 7.4+, Laravel 8+ and Livewire 2+ .
-This package uses json columns. MySQL 5.7 or higher is required.
+# Create beautiful dashboards powered by Livewire
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-dashboard.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-dashboard)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-dashboard/run-tests?label=tests)](https://github.com/spatie/laravel-dashboard/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-dashboard.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-dashboard)
+
+Using this package you can create beautiful dashboards. The dashboard consists of tile which are, under the hood, Livewire components that can update themselves via polling. 
+
+This package contains the base functionality:
+
+- the base css
+- a `dashboard` view component
+- a `tile` view component to position stuff on the dashboard
+- a `Tile` model to persist fetched data that tiles can use to store fetched data
 
 
-## Installation & setup
-You can install the package via composer:
-composer require shihabphp/livewire-dashboard
+## Documentation
 
-To create the dashboard_tiles table, you must create and run the migration.
+All documentation is available [on our documentation site](https://spatie.be/docs/laravel-dashboard).
 
-php artisan vendor:publish --provider="Shihabphp\Dashboard\DashboardServiceProvider" --tag="dashboard-migrations"
-php artisan migrate
+## Testing
 
+``` bash
+composer test
+```
 
+## Changelog
 
-## Creating your first dashboard
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
+## Contributing
 
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
+## Security
 
+If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+
+## Credits
+
+- [Freek Van der Herten](https://github.com/freekmurze)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
