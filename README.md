@@ -23,7 +23,8 @@ To create the dashboard_tiles table, you must create and run the migration.
 ```bash
 php artisan vendor:publish --provider="Shihabphp\Dashboard\DashboardServiceProvider" --tag="dashboard-migrations"
 
-php artisan migrate```
+php artisan migrate
+```
 
 
 
